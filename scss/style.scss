@@ -424,14 +424,189 @@ html{
   }
 }
 
+.team {
+  background: linear-gradient(rgba($color: $COLOR_PRESSED, $alpha: 0.6), rgba($color: $COLOR_PRESSED, $alpha: 0.6)), url('../img/team-bg.jpg');
+  padding: 80px 0;
+  .container {
+    .team__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .team__title {
+        font-family: Merel;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: $LINE_HEIGHT;
+        text-align: center;
+        color: $COLOR_WHITE;
+        margin-bottom: 25px;
+      }
+      .team__media {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 600px;
+        max-width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+        &-play-btn{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .team__text {
+        width: 600px;
+        max-width: 100%;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: $LINE_HEIGHT;
+        color: $COLOR_WHITE_GREY;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      .team__btn {
+      }
+      .btn-orange-fil {
+        &:hover {}
+        &:active {}
+        &:focus {}
+      }
+    }
+  }
+}
 
+.about {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+  @media (max-width: 767px){
+    padding: 50px 0;
+  }
+  &-decor{
+    position: absolute;
+    top: 0;
+    width: 180px;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+    @media (max-width: 600px){
+      display: none;
+    }
+  }
+  &__decor-left{
+    left: 0;
+  }
+  &__decor-right{
+    right: 0;
+  }
+  .container {
+    z-index: 10;
+    position: relative;
+    .about__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      .about__title {
+        font-family: Merel;
+        font-weight: 900;
+        font-size: 45px;
+        line-height: $LINE_HEIGHT;
+        text-align: center;
+        color: $COLOR_ACCENT;
+        margin-bottom: 25px;
+      }
+      .about__block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 991px){
+          flex-direction: column;
+        }
+      }
+      .about__media {
+        position: relative;
+        width: 500px;
+        @media (max-width: 1199px){
+          width: 50%;
+        }
+        @media (max-width: 991px){
+          width: 600px;
+        }
+        @media (max-width: 767px){
+          width: 100%;
+        }
+        max-width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+        .team__media-play-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .about__text-btn {
+        width: 500px;
+        @media (max-width: 1199px){
+          width: 50%;
+        }
+        @media (max-width: 991px){
+          width: 600px;
+          margin-left: 0;
+          margin-top: 25px;
+          align-items: center;
+        }
+        @media (max-width: 767px){
+          width: 100%;
+        }
+        max-width: 100%;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .about__text {
+          font-family: Calibri;
+          font-weight: bold;
+          font-size: 20px;
+          @media (max-width: 1199px){
+            font-size: 18px;
+          }
+          @media (max-width: 575px){
+            font-size: 15px;
+          }
+          line-height: $LINE_HEIGHT;
+          color: $COLOR_TEXT_DARK;
+          margin-bottom: 25px;
+        }
+        .about__btn {
+        }
+      }
+    }
+  }
+}
 
 
 a.btn-orange-fil {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background: #EA5B27;
+  background: $COLOR_ACCENT;
   border-radius: 14px;
   color: $COLOR_WHITE;
   text-decoration: none;
