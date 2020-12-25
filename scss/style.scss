@@ -13,6 +13,9 @@ $COLOR_WHITE_GREY: #E5E5E5;
 $COLOR_GREY: #C4C4C4;
 $COLOR_LIGHT: #E7E1C9;
 
+*{
+  outline: none;
+}
 
 //EFFECTS
 $EFFECT_SHADOW: 15px 15px 20px rgba(234, 91, 39, 0.2);
@@ -24,6 +27,17 @@ html{
   height: 2000px;
   background-color: $COLOR_HOVER;
 }
+
+.slick-track{
+  display: flex;
+}
+.slick-list{
+  overflow: hidden;
+}
+.slick-slide{
+  outline: none;
+}
+
 //STYLES
 .header {
   background-color: $COLOR_WHITE;
@@ -31,7 +45,7 @@ html{
   height: 80px;
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 99999;
   .header__wrapper {
     display: flex;
     width: 100%;
@@ -56,7 +70,7 @@ html{
           display: none;
         }
         width: 180px;
-        margin: 0 0 0 20px;
+        margin: 12px 0 0 20px;
         color: $COLOR_TEXT_SECONDARY;
         font-family: Calibri;
         font-style: normal;
@@ -424,6 +438,246 @@ html{
   }
 }
 
+
+.stages {
+  padding: 80px 0;
+  @media (max-width: 767px){
+    padding: 0 0 40px 0;
+  }
+  .container {
+    .stages__title {
+      font-family: Merel;
+      font-weight: 900;
+      font-size: 45px;
+      line-height: $LINE_HEIGHT;
+      color: $COLOR_ACCENT;
+      text-align: center;
+      margin-bottom: 80px;
+      @media (max-width: 575px){
+        font-size: 35px;
+      }
+      .slick-dots{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        margin-top: 25px;
+        padding: 0;
+        li{
+          transition: all 1s;
+          list-style: none;
+          margin-left: 80px;
+          &:first-child{
+            margin-left: 0;
+            button:before{
+              height: 0;
+              width: 0;
+            }
+          }
+          button:after{
+            position: absolute;
+            bottom: -30px;
+            color: $COLOR_TEXT_DARK;
+            transition: all 0.2s ease-in-out 0.2s;
+            
+          }
+          &:nth-child(1){
+            button:after{
+              content: 'Выращивание';
+            }
+          }
+          &:nth-child(2){
+            button:after{
+              content: 'Сушка';
+            }
+          }
+          &:nth-child(3){
+            button:after{
+              content: 'Упаковка';
+            }
+          }
+          &:nth-child(4){
+            button:after{
+              content: 'Хранение';
+            }
+          }
+          &:nth-child(5){
+            button:after{
+              content: 'Доставка';
+            }
+          }
+          button{
+            transition: all 0.2s ease-in-out 0.2s;
+            outline: none;
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background-color: $COLOR_GREY;
+            position: relative;
+            font-family: Calibri;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:$COLOR_TEXT_SECONDARY;
+            &:before{
+              transition: all 0.2s ease-in-out 0s;
+              content: '';
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -80px;
+              width: 80px;
+              height: 2px;
+              background-color: $COLOR_GREY;
+            }
+          }
+        }
+        li.slick-active, li.active{
+          button{
+            background-color: $COLOR_ACCENT;
+            color: $COLOR_WHITE;
+            &:before{
+              background-color: $COLOR_ACCENT;
+            }
+            &::after{
+              color: $COLOR_ACCENT;
+            }
+          }
+        }
+      }
+    }
+    .stages__slider-wrapper{
+      position: relative;
+      z-index: 5;
+      padding-bottom: 20px;
+      
+      .stages__slider-arrow{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        width: 40px;
+        height: 40px;
+        border: 2px solid $COLOR_ACCENT;
+        background-color: $COLOR_WHITE;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        &>svg{
+          transition: all 0.2s;
+          fill: $COLOR_ACCENT;
+        }
+        &.slick-disabled{
+          opacity: 0.5;
+        }
+        &:hover:not(.slick-disabled){
+          background-color: $COLOR_ACCENT;
+          cursor: pointer;
+          &>svg{
+            fill: $COLOR_WHITE;
+          }
+        }
+        &:active:not(.slick-disabled){
+          background-color: $COLOR_WHITE;
+          &>svg{
+            fill: $COLOR_ACCENT;
+          }
+        }
+      }
+      .stages__slider-prev{
+      }
+      .stages__slider-next{
+        left: 65px;
+      }
+    }
+    .stages__slider {
+      width: 100%;
+      position: relative;
+      .slider-item {
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 767px){
+          flex-direction: column-reverse;
+        }
+        &__content {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          width: calc(50% - 5px);
+          margin-right: 5px;
+          margin-bottom: 20px;
+          max-width: 100%;
+          @media (max-width: 767px){
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+        &__media {
+          width: calc(50% - 5px);
+          margin-left: 5px;
+          max-width: 100%;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          @media (max-width: 767px){
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 20px;
+          }
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+          .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .slider-item__title {
+          font-family: Merel;
+          font-weight: 900;
+          font-size: 40px;
+          line-height: $LINE_HEIGHT;
+          color: $COLOR_ACCENT;
+          @media (max-width: 991px){
+            font-size: 30px;
+          }
+          @media (max-width: 575px){
+            font-size: 22px;
+          }
+        }
+        .slider-item__text {
+          font-family: Calibri;
+          font-size: 20px;
+          line-height: $LINE_HEIGHT;
+          color: $COLOR_TEXT_DARK;
+          margin: 30px 0;
+          ul{
+            margin-top: 10px;
+            list-style-image: url('../img/UIKit/list-dot.svg');
+          }
+          @media (max-width: 575px){
+            margin: 15px 0 20px 0;
+          }
+        }
+        .slider-item__btn {
+        }
+        
+        
+      }
+    }
+  }
+}
+
 .team {
   background: linear-gradient(rgba($color: $COLOR_PRESSED, $alpha: 0.6), rgba($color: $COLOR_PRESSED, $alpha: 0.6)), url('../img/team-bg.jpg');
   padding: 80px 0;
@@ -720,3 +974,50 @@ a.btn-orange-not-fill {
     }
   }
 }
+
+//.stages__dots{
+//        //background-color: #f0f;
+//        ul{
+//          display: flex;
+//          justify-content: center;
+//          align-items: center;
+//          list-style: none;
+//          li{
+//            display: flex;
+//            flex-direction: column;
+//            justify-content: center;
+//            align-items: center;
+//            margin-left: 80px;
+//            &:first-child{
+//              margin-left: 0;
+//            }
+//            .btn-block{
+//              &:before{
+//                position: absolute;
+//                top: 50%;
+//                transform: translateY(-50%);
+//                left: -100%;
+//                width: 80px;
+//                height: 2px;
+//                background-color: #f0f;
+//              }
+//              button{
+//                width: 30px;
+//                height: 30px;
+//                border: none;
+//                border-radius: 50%;
+//                background-color: $COLOR_ACCENT;
+//                color: $COLOR_WHITE;
+//                margin-bottom: 8px;
+//                position: relative;
+//              }
+//            }
+//            span{
+//              font-family: Calibri;
+//              font-size: 15px;
+//              line-height: $LINE_HEIGHT;
+//              //color: #EA5B27;
+//            }
+//          }
+//        }
+//      }
