@@ -519,7 +519,8 @@
                     <input type="text" name="name" id="name" placeholder="Фамилия Имя">
                     <input type="tel" name="phone" id="phone" placeholder="Номер телефона">
                     <input type="email" name="email" id="email" placeholder="E-mail">
-                    <button type="submit" form="sendForm" href="#download" class="popup-open">Получить
+                    <input type="text" name="msg" id="msg" value="Сюда пиши" disabled style="display: none">
+                    <button id="formSubmit" type="submit" form="sendForm">Получить
                       предложение</button>
                   </form>
                 </div>
@@ -530,21 +531,32 @@
       </div>
     </div>
   </div>
+
   <div id="download" class="popup">
     <div class="popup__body">
       <div class="popup__content">
         <div class="downloadForm">
           <div class="downloadForm__title">Оставьте заявку и получите каталог</div>
           <div class="downloadForm__form">
-            <form action="" id="sendForm">
+            <form action="" id="sendCatalog">
               <input type="text" name="name" id="name" placeholder="Фамилия Имя">
               <!--<input type="tel" name="phone" id="phone" placeholder="Номер телефона">-->
               <input type="email" name="email" id="email" placeholder="E-mail">
-              <button type="submit" form="sendForm" href="#download" class="popup-open">Получить</button>
+              <button id="formSubmit" type="submit" form="sendCatalog">Получить</button>
             </form>
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="result" class="popup">
+    <div class="popup__body">
+      <div class="popup__content">
+        <div class="result-msg">Спасибо! Ваша заявка была отправлена.</div>
+        <a href="#" class="popup-close btn-orange-fil">Закрыть</a>
       </div>
     </div>
   </div>

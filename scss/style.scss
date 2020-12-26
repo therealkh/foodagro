@@ -1404,6 +1404,54 @@ footer {
   }
 }
 
+#result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .result-msg {
+    font-family: Merel;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: $LINE_HEIGHT;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $COLOR_ACCENT;
+    margin-bottom: 20px;
+    @media (max-width: 900px){
+      font-size: 30px;
+    }
+    @media (max-width: 780px){
+      font-size: 28px;
+    }
+    @media (max-width: 575px){
+      font-size: 20px;
+    }
+  }
+  .popup__content{
+    width: 500px;
+    max-width: 100%;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 920px){
+      padding: 60px 80px;
+    }
+    @media (max-width: 820px){
+      padding: 45px 70px;
+    }
+    @media (max-width: 575px){
+      padding: 20px 30px;
+      max-height: none;
+    }
+    @media (max-height: 600px){
+      max-height: none;
+    }
+  }
+}
 a.btn-orange-fil {
   display: flex;
   align-items: center;
@@ -1429,6 +1477,12 @@ a.btn-orange-fil {
   @media (max-width: 767px){
     font-size: 16px;
   }
+}
+button:disabled,
+button[disabled]{
+  border-color: $COLOR_TEXT_DARK!important;
+  background-color: $COLOR_TEXT_SECONDARY!important;
+  color: $COLOR_WHITE!important;
 }
 a.btn-orange-not-fill {
   display: flex;
