@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const decoratedBlocks = document.querySelectorAll('.decorated');
   const form = document.querySelector('form#sendForm');
   const catalogForm = document.querySelector('form#sendCatalog');
+
+  //const prevDef = document.querySelectorAll('.prevDef');
+  //prevDef.forEach((el) => { el.addEventListener('click', (e) => { e.preventDefault(); }) });
+
   console.dir(form);
   form.onsubmit = (event) => {
     send(form, event, 'mailer/sendForm.php', 'Спасибо! Ваша заявка была отправлена.')
