@@ -30,6 +30,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const lockPadding = document.querySelectorAll('.lock-padding');
   const body = document.querySelector('body');
   const form = document.querySelector('#sendForm');
+  const menuLinks = document.querySelectorAll('.header__menu>ul>li>a');
+  //const decorsLeft = document.querySelectorAll('.decor-left');
+  const decoratedBlocks = document.querySelectorAll('.decorated');
+  console.log(decoratedBlocks);
+  document.addEventListener('mousemove', event => {
+    if (event.target.closest('.decorated')) {
+      block = event.target.closest('.decorated');
+      const decorLeft = block.querySelector('.decor-left');
+      const decorRight = block.querySelector('.decor-right');
+      console.log(`Y(${event.clientY}) X(${event.clientX})`);
+      const width = block.offsetWidth;
+      decorLeft.style.transform = `rotateY(${(event.clientX / 50)}deg) rotateX(${(-event.clientY / 50)}deg)`;
+      decorRight.style.transform = `rotateY(${-1 * ((width - event.clientX) / 50)}deg) rotateX(${(-event.clientY / 50)}deg)`;
+      //decorRight.style.transform = `rotateX(${-(event.clientX / 70)}deg) rotateY(${-(event.clientY / 70)}deg)`;
+
+    }
+  })
+  for (let i = 0; i < decoratedBlocks.length; i++) {
+    block = decoratedBlocks[i];
+
+  }
+  menuLinks.forEach((item, index, arr) => {
+    item.addEventListener('click', () => {
+      if (isMobileMenu) {
+        onBurgerClicked();
+      }
+    })
+  })
   form.addEventListener('submit', () => {
     console.log('121314adsasdasdas324211');
     alert(123123);
@@ -44,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       onBurgerClicked();
     }
   })
+
   //PopUp
   if (ppOpeners.length > 0) {
     for (let i = 0; i < ppOpeners.length; i++) {
@@ -142,9 +171,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function openMobileMenu() {
     menu.classList.add('active');
     document.body.style.overflow = 'hidden';
+    isMobileMenu = true;
   }
   function closeMobileMenu() {
     menu.classList.remove('active');
     document.body.style.overflow = '';
+    isMobileMenu = false;
   }
+
+
+
+
 })

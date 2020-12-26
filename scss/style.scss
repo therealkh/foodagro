@@ -37,7 +37,20 @@ body.lock{
 .slick-slide{
   outline: none;
 }
-
+.decorated{
+  perspective: 3000px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.decor-left, .decor-right{
+  margin-top: -10px;
+}
+.decor-left{
+  margin-left: -10px;
+}
+.decor-right{
+  margin-right: -10px;
+}
 //STYLES
 .header {
   background-color: $COLOR_WHITE;
@@ -440,7 +453,38 @@ body.lock{
   @media (max-width: 767px){
     padding: 0 0 40px 0;
   }
+  position: relative;
+  z-index: 1;
+  .stages-decor{
+    position: absolute;
+    top: 0;
+    width: 180px;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+    @media (max-width: 1115px){
+      width: 160px;
+    }
+    @media (max-width: 865px){
+      width: 140px;
+      //display: none;
+    }
+    @media (max-width: 767px){
+      //width: 140px;
+      display: none;
+    }
+  }
+  &__decor-left {
+    left: 0;
+  }
+  &__decor-right {
+    right: 0;
+  }
   .container {
+    height: 100%;
+    z-index: 10;
+    position: relative;
     .stages__title {
       font-family: Merel;
       font-weight: 900;
@@ -882,12 +926,20 @@ footer {
   position: relative;
   overflow: hidden;
   background-color: $COLOR_LIGHT;
+  @media (max-width: 767px){
+    padding-bottom: 400px;
+  }
   .footer-map {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     height: 100%;
     width: 50%;
+    @media (max-width: 767px){
+      height: 400px;
+      width: 100%;
+      z-index: 2;
+    }
     iframe {
     }
   }
@@ -896,6 +948,7 @@ footer {
     justify-content: flex-end;
     .footer-wrapper {
       padding: 80px 0 80px 50px;
+      
       width: 50%;
       display: flex;
       flex-direction: column;
@@ -903,6 +956,14 @@ footer {
       justify-content: center;
       position: relative;
       z-index: 5;
+      overflow: hidden;
+      @media (max-width: 767px){
+        width: 100%;
+        padding-left: 0;
+      }
+      @media (max-width: 575px){
+        align-items: center;
+      }
       &__title {
         font-family: Merel;
         font-weight: 900;
@@ -960,9 +1021,19 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 1200px) and (min-width: 768px){
+          flex-direction: column;
+        }
+        @media (max-width: 450px){
+          flex-direction: column;
+          width: 100%;
+        }
         &>a{
           margin: 7px;
           font-size: 18px;
+          @media (max-width: 767px){
+            font-size: 15px;
+          }
         }
       }
       .phone, .mail {
@@ -987,39 +1058,6 @@ footer {
           
         }
       }
-      .instagram {
-        svg {
-        }
-        &:hover {}
-        &:active {}
-        &:focus {}
-      }
-      .facebook {
-        svg {
-        }
-        &:hover {}
-        &:active {}
-        &:focus {}
-      }
-      .telegram {
-        svg {
-        }
-        &:hover {}
-        &:active {}
-        &:focus {}
-      }
-      .btn-orange-not-fill {
-        span {
-        }
-        &:hover {}
-        &:active {}
-        &:focus {}
-      }
-      .btn-orange-fil {
-        &:hover {}
-        &:active {}
-        &:focus {}
-      }
     }
   }
   .bg{
@@ -1032,6 +1070,9 @@ footer {
     //z-index: -1;
     img{
       height: 100%;
+      @media (max-width: 767px){
+        
+      }
     }
   }
 }
