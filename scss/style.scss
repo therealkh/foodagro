@@ -94,6 +94,7 @@ body.lock{
     }
 
     .header__menu {
+      margin-top: 12px;
       ul {
         padding: 0;
         margin: 0;
@@ -995,7 +996,7 @@ footer {
         padding-left: 0;
         list-style: none;
         li{
-          padding-left: 57px;
+          padding-left: 42px;
           &:nth-child(1){
             margin-bottom: 25px;
             a:before{
@@ -1014,6 +1015,9 @@ footer {
         font-size: 20px;
         line-height: 150%;
         color: $COLOR_TEXT_DARK;
+        @media (max-width: 767px){
+          text-align: center;
+        }
       }
       .socials {
         margin: 25px 0;
@@ -1041,6 +1045,10 @@ footer {
         justify-content: center;
         @media (max-width: 1200px) and (min-width: 768px){
           flex-direction: column;
+          align-items: flex-start;
+          &>a{
+            margin-left: 0!important;
+          }
         }
         @media (max-width: 450px){
           flex-direction: column;
@@ -1048,6 +1056,9 @@ footer {
         }
         &>a{
           margin: 7px;
+          &:first-child{
+            margin-left: 0;
+          }
           font-size: 18px;
           @media (max-width: 767px){
             font-size: 15px;
@@ -1066,7 +1077,7 @@ footer {
             content: '';
             position: absolute;
             top: 0;
-            left: -57px;
+            left: -42px;
             width: 27px;
             height: 27px;
             background-size: contain;
@@ -1541,6 +1552,17 @@ a.btn-orange-not-fill {
   //background-color: #f0f;
   border-radius: 50%;
   position: relative;
+  &:hover{
+    .circle1, .circle2{
+      background-color: rgba($color: $COLOR_HOVER, $alpha: 0.5);
+    }
+    a.play{
+      background-color: $COLOR_HOVER;
+      &:active{
+        background-color: $COLOR_PRESSED;
+      }
+    }
+  }
   & .circle1{
     //border: 1px solid $COLOR_HOVER;
     display: inline-block;
@@ -1554,6 +1576,7 @@ a.btn-orange-not-fill {
     border-radius: 50%;
     background-color: rgba($color: $COLOR_ACCENT, $alpha: 0.2);
     animation: circle2 2s ease-in 0.5s infinite normal none;
+    transition: background-color 0.3s;
   }
   & .circle2{
     //border: 1px solid $COLOR_HOVER;
@@ -1568,6 +1591,7 @@ a.btn-orange-not-fill {
     border-radius: 50%;
     background-color: rgba($color: $COLOR_ACCENT, $alpha: 0.4);
     animation: circle2 2s ease-in 0.25s infinite normal none;
+    transition: background-color 0.3s;
   }
   & a.play{
     display: inline-block;
@@ -1580,6 +1604,8 @@ a.btn-orange-not-fill {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background-image: url('../img/UIKit/play-btn.svg');
+    background-color: $COLOR_ACCENT;
+    transition: background-color 0.3s;
   }
   @keyframes circle2 {
     0%{
@@ -1614,7 +1640,7 @@ a.btn-orange-not-fill {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s ease 0s;
+  transition: all 0.4s ease 0s;
   //box-sizing: border-box;
   //padding: 20px 0;
   overflow-x: hidden;
@@ -1642,7 +1668,7 @@ a.btn-orange-not-fill {
       padding: 80px 110px;
       border-radius: 10px;
       position: relative;
-      transition: all 0.2s;
+      transition: all 0.4s;
       transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 
       //box-sizing: padding-box;
@@ -1668,7 +1694,7 @@ a.btn-orange-not-fill {
       background-color: $COLOR_WHITE;
       border-radius: 10px;
       position: relative;
-      transition: all 0.2s;
+      transition: all 0.4s;
       transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
       & iframe{
         max-width: 100%;

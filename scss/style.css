@@ -797,7 +797,7 @@ footer {
         padding-left: 0;
         list-style: none; }
         footer .container .footer-wrapper ul li {
-          padding-left: 42px; }
+          padding-left: 57px; }
           footer .container .footer-wrapper ul li:nth-child(1) {
             margin-bottom: 25px; }
             footer .container .footer-wrapper ul li:nth-child(1) a:before {
@@ -831,10 +831,7 @@ footer {
         justify-content: center; }
         @media (max-width: 1200px) and (min-width: 768px) {
           footer .container .footer-wrapper .footer__btns {
-            flex-direction: column;
-            align-items: flex-start; }
-            footer .container .footer-wrapper .footer__btns > a {
-              margin-left: 0 !important; } }
+            flex-direction: column; } }
         @media (max-width: 450px) {
           footer .container .footer-wrapper .footer__btns {
             flex-direction: column;
@@ -842,8 +839,6 @@ footer {
         footer .container .footer-wrapper .footer__btns > a {
           margin: 7px;
           font-size: 18px; }
-          footer .container .footer-wrapper .footer__btns > a:first-child {
-            margin-left: 0; }
           @media (max-width: 767px) {
             footer .container .footer-wrapper .footer__btns > a {
               font-size: 15px; } }
@@ -858,7 +853,7 @@ footer {
           content: '';
           position: absolute;
           top: 0;
-          left: -42px;
+          left: -57px;
           width: 27px;
           height: 27px;
           background-size: contain;
@@ -1261,12 +1256,6 @@ a.btn-orange-not-fill {
   height: 100px;
   border-radius: 50%;
   position: relative; }
-  .play-btn:hover .circle1, .play-btn:hover .circle2 {
-    background-color: rgba(49, 136, 31, 0.5); }
-  .play-btn:hover a.play {
-    background-color: #31881F; }
-    .play-btn:hover a.play:active {
-      background-color: #206013; }
   .play-btn .circle1 {
     display: inline-block;
     width: 100px;
@@ -1278,8 +1267,7 @@ a.btn-orange-not-fill {
     z-index: 1;
     border-radius: 50%;
     background-color: rgba(234, 91, 39, 0.2);
-    animation: circle2 2s ease-in 0.5s infinite normal none;
-    transition: background-color 0.3s; }
+    animation: circle2 2s ease-in 0.5s infinite normal none; }
   .play-btn .circle2 {
     display: inline-block;
     width: 80px;
@@ -1291,8 +1279,7 @@ a.btn-orange-not-fill {
     z-index: 2;
     border-radius: 50%;
     background-color: rgba(234, 91, 39, 0.4);
-    animation: circle2 2s ease-in 0.25s infinite normal none;
-    transition: background-color 0.3s; }
+    animation: circle2 2s ease-in 0.25s infinite normal none; }
   .play-btn a.play {
     display: inline-block;
     width: 60px;
@@ -1303,9 +1290,7 @@ a.btn-orange-not-fill {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-image: url("../img/UIKit/play-btn.svg");
-    background-color: #EA5B27;
-    transition: background-color 0.3s; }
+    background-image: url("../img/UIKit/play-btn.svg"); }
 @keyframes circle2 {
   0% {
     opacity: 0; }
@@ -1330,7 +1315,7 @@ a.btn-orange-not-fill {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s ease 0s;
+  transition: all 0.2s ease 0s;
   overflow-x: hidden;
   overflow-y: auto; }
   .popup__body {
@@ -1354,7 +1339,7 @@ a.btn-orange-not-fill {
       padding: 80px 110px;
       border-radius: 10px;
       position: relative;
-      transition: all 0.4s;
+      transition: all 0.2s;
       transform: perspective(600px) translate(0px, -100%) rotateX(45deg); }
       @media (max-width: 920px) {
         .popup__body .popup__content:not(.video-popup) {
@@ -1377,7 +1362,7 @@ a.btn-orange-not-fill {
       background-color: #FFFFFF;
       border-radius: 10px;
       position: relative;
-      transition: all 0.4s;
+      transition: all 0.2s;
       transform: perspective(600px) translate(0px, -100%) rotateX(45deg); }
       .popup__body .video-popup iframe {
         max-width: 100%; }

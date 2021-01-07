@@ -57,8 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const decorRight = block.querySelector('.decor-right');
       //console.log(`Y(${event.clientY}) X(${event.clientX})`);
       const width = block.offsetWidth;
-      decorLeft.style.transform = `rotateY(${(event.clientX / 50)}deg) rotateX(${(-event.clientY / 50)}deg)`;
-      decorRight.style.transform = `rotateY(${-1 * ((width - event.clientX) / 50)}deg) rotateX(${(-event.clientY / 50)}deg)`;
+      const height = block.offsetHeight;
+      const offset = 10;
+      decorLeft.style.transform = `translate(${(offset * (event.clientX / width))}px, ${(offset * (event.clientY / height))}px)`;
+      decorRight.style.transform = `translate(${(offset * (event.clientX / width))}px, ${(offset * (event.clientY / height))}px)`;
       //decorRight.style.transform = `rotateX(${-(event.clientX / 70)}deg) rotateY(${-(event.clientY / 70)}deg)`;
 
     }
@@ -76,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   let isMobileMenu = false;
   let unlock = true;
-  let timeout = 200;
+  let timeout = 400;
 
   //Listeners
   document.addEventListener('click', (e) => {
@@ -177,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
       unlock = true;
     }, timeout);
   }
-
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       const activePopup = document.querySelector('.popup.opened');
