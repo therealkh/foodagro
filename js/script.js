@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const width = block.offsetWidth;
       const height = block.offsetHeight;
       const offset = 10;
-      decorLeft.style.transform = `translate(${(offset * (event.clientX / width))}px, ${(offset * (event.clientY / height))}px)`;
-      decorRight.style.transform = `translate(${(offset * (event.clientX / width))}px, ${(offset * (event.clientY / height))}px)`;
+      decorLeft.style.transform = `translate(${-1 * (offset * (event.clientX / width))}px, ${-1 * (offset * (event.clientY / height))}px)`;
+      decorRight.style.transform = `translate(${-1 * (offset * (event.clientX / width))}px, ${-1 * (offset * (event.clientY / height))}px)`;
       //decorRight.style.transform = `rotateX(${-(event.clientX / 70)}deg) rotateY(${-(event.clientY / 70)}deg)`;
 
     }
